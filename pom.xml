@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.javaetmoi.core</groupId>
+  <artifactId>javaetmoi-spring4-vfs2-support</artifactId>
+  <name>JavaEtMoi Core :: ${project.artifactId} - ${project.packaging}</name>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <description>JBoss VFS 2 support for Spring Framework 4.0</description>
+  <inceptionYear>2014</inceptionYear>
+  <url>https://github.com/arey/spring4-vfs2-support</url>
+
+  <!-- GitHub Software Configuration Management -->
+  <scm>
+    <url>https://github.com/arey/spring4-vfs2-support</url>
+    <connection>scm:git:ssh://git@github.com/arey/spring4-vfs2-support.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/arey/spring4-vfs2-support.git</developerConnection>
+  </scm>
+
+  <!-- Apache 2 license -->
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <!-- Version of third libraries -->
+    <version.spring-framework>4.0.1.RELEASE</version.spring-framework>
+    <version.servlet-api>2.5</version.servlet-api>
+
+    <!-- Version of maven plugins -->
+    <version.plugin.maven-eclipse-plugin>2.9</version.plugin.maven-eclipse-plugin>
+    <version.plugin.maven-compiler-plugin>2.3</version.plugin.maven-compiler-plugin>
+    <version.plugin.maven-resources-plugin>2.4.3</version.plugin.maven-resources-plugin>
+    <version.plugin.maven-source-plugin>2.1.2</version.plugin.maven-source-plugin>
+    <version.plugin.maven-javadoc-plugin>2.7</version.plugin.maven-javadoc-plugin>
+    <version.plugin.maven-release-plugin>2.2.2</version.plugin.maven-release-plugin>
+    <version.plugin.maven-deploy-plugin>2.8.1</version.plugin.maven-deploy-plugin>
+
+    <!-- Version of maven extensions -->
+    <version.extension.wagon-webdav>1.0-beta-2</version.extension.wagon-webdav>
+
+
+    <!-- Source encoding -->
+    <source.encoding>UTF-8</source.encoding>
+  </properties>
+
+  <dependencies>
+    <!-- Spring web -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${version.spring-framework}</version>
+    </dependency>
+
+    <!-- Servlet API required by Eclipse -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>${version.servlet-api}</version>
+      <optional>true</optional>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>${version.extension.wagon-webdav}</version>
+      </extension>
+    </extensions>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${version.plugin.maven-compiler-plugin}</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>${source.encoding}</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${version.plugin.maven-resources-plugin}</version>
+        <configuration>
+          <encoding>${source.encoding}</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>${version.plugin.maven-source-plugin}</version>
+        <configuration>
+          <encoding>${source.encoding}</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>${version.plugin.maven-release-plugin}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${version.plugin.maven-javadoc-plugin}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin </artifactId>
+        <version>${version.plugin.maven-deploy-plugin}</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Deploy releases and snapshots to the CloudBees maven repositories -->
+  <distributionManagement>
+    <downloadUrl>https://github.com/arey/spring4-vfs2-support</downloadUrl>
+    <repository>
+      <id>javaetmoi-cloudbees-release</id>
+      <name>javaetmoi-cloudbees-release</name>
+      <url>dav:https://repository-javaetmoi.forge.cloudbees.com/release/</url>
+    </repository>
+    <snapshotRepository>
+      <id>javaetmoi-cloudbees-snapshot</id>
+      <name>javaetmoi-cloudbees-snapshot</name>
+      <url>dav:https://repository-javaetmoi.forge.cloudbees.com/snapshot/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>javaetmoi-cloudbees-release</id>
+      <name>javaetmoi-cloudbees-release</name>
+      <url>https://repository-javaetmoi.forge.cloudbees.com/release/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>javaetmoi-cloudbees-snapshot</id>
+      <name>javaetmoi-cloudbees-snapshot</name>
+      <url>https://repository-javaetmoi.forge.cloudbees.com/snapshot/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <profiles>
+    <profile>
+      <id>eclipse</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <artifactId>maven-eclipse-plugin</artifactId>
+              <version>${version.plugin.maven-eclipse-plugin}</version>
+              <configuration>
+                <wtpversion>2.0</wtpversion>
+                <downloadSources>true</downloadSources>
+                <downloadJavadocs>true</downloadJavadocs>
+                <ajdtVersion>none</ajdtVersion>
+                <useProjectReferences>true</useProjectReferences>
+                <additionalProjectnatures>
+                  <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+                </additionalProjectnatures>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+
+    <profile>
+      <!-- Specific profile for release or artifact deployment -->
+      <!-- Sources et javadoc are packaged -->
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+
+</project>
