@@ -29,7 +29,7 @@
 
   <properties>
     <!-- Version of third libraries -->
-    <version.spring-framework>4.0.1.RELEASE</version.spring-framework>
+    <version.spring-framework>4.0.3.RELEASE</version.spring-framework>
     <version.servlet-api>2.5</version.servlet-api>
 
     <!-- Version of maven plugins -->
