@@ -59,7 +59,7 @@ Or with the Spring DispatcherServlet:
 </servlet>
 ``` 
 
-## References ## 
+## References ##
 * [GitHub commit by Juergen Hoeller](https://github.com/spring-projects/spring-framework/commit/ca194261a42a0a4f0c8bdc36f447e1029a7d2e3e)
 * [Post on the Spring Forum](http://forum.spring.io/forum/spring-projects/container/744173-spring-4-doesn-t-support-vfs2)
 
