@@ -11,7 +11,7 @@ The JBoss5AnnotationConfigWebApplicationContext class worked with the Vfs2Utils 
 ```xml
 <dependency>
   <groupId>com.javaetmoi.core</groupId>
-  <artifactId>javaetmoi-spring4-vfs2-suppor</artifactId>
+  <artifactId>javaetmoi-spring4-vfs2-support</artifactId>
   <version>1.0.0</version>
 </dependency> 
        
@@ -20,7 +20,7 @@ The JBoss5AnnotationConfigWebApplicationContext class worked with the Vfs2Utils 
   <releases>
     <enabled>true</enabled>
   </releases>
-  <name>Java & Moi Maven RELEASE Repository</name>
+  <name>Java et Moi Maven RELEASE Repository</name>
   <url>http://repository-javaetmoi.forge.cloudbees.com/release/</url>
 </repository>
 ```
