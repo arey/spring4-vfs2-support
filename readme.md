@@ -35,7 +35,7 @@ With the Spring ContextLoaderListener:
 </context-param>
 <context-param>
   <param-name>contextConfigLocation</param-name>
-  <param-value>fr.generali.gael.vital.web.config.ApplicationConfig</param-value>
+  <param-value>com.example.MyAppWebConfig</param-value>
 </context-param>
 <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
