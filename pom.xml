@@ -5,7 +5,7 @@
   <groupId>com.javaetmoi.core</groupId>
   <artifactId>javaetmoi-spring4-vfs2-support</artifactId>
   <name>JavaEtMoi Core :: ${project.artifactId} - ${project.packaging}</name>
-  <version>1.1.0</version>
+  <version>1.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <description>JBoss VFS 2 support for Spring Framework 4.0</description>
   <inceptionYear>2014</inceptionYear>
