@@ -12,7 +12,7 @@ The JBoss5AnnotationConfigWebApplicationContext class worked with the Vfs2Utils 
 <dependency>
   <groupId>com.javaetmoi.core</groupId>
   <artifactId>javaetmoi-spring4-vfs2-support</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency> 
        
 <repository>
@@ -25,9 +25,9 @@ The JBoss5AnnotationConfigWebApplicationContext class worked with the Vfs2Utils 
 </repository>
 ```
 
-2. Configure the JBoss5AnnotationConfigWebApplicationContext into the web.xml
+2. For Spring Java Config, declare the JBoss5AnnotationConfigWebApplicationContext into the web.xml
 
-With the Spring ContextLoaderListener:
+Either with the Spring ContextLoaderListener:
 ```
 <context-param>
   <param-name>contextClass</param-name>
@@ -57,7 +57,20 @@ Or with the Spring DispatcherServlet:
   </init-param>
   <load-on-startup>1</load-on-startup>
 </servlet>
-``` 
+```
+
+3. For traditional XML configuration, declare the JBoss5XmlWebApplicationContext into the web.xml 
+
+```
+<context-param>
+  <param-name>contextClass</param-name>
+  <param-value>com.javaetmoi.core.spring.JBoss5XmlWebApplicationContext</param-value>
+</context-param>
+<listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+```
+ 
 
 ## References ##
 * [GitHub commit by Juergen Hoeller](https://github.com/spring-projects/spring-framework/commit/ca194261a42a0a4f0c8bdc36f447e1029a7d2e3e)
@@ -71,8 +84,11 @@ Or with the Spring DispatcherServlet:
     <th>Version</th><th>Release date</th><th>Features</th>
   </tr>
   <tr>
-    <td>1.0.1-SNAPSHOT</td><td>next version</td><td></td>
+    <td>1.1.1-SNAPSHOT</td><td>next version</td><td></td>
   </tr>
+  <tr>
+    <td>1.1.0</td><td>31/03/2014</td><td>JBoss5XmlWebApplicationContext added</td>
+  </tr>  
   <tr>
     <td>1.0.0</td><td>29/03/2014</td><td>First release which supports Spring Framework 4.0.3</td>
   </tr>
