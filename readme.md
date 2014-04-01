@@ -1,8 +1,8 @@
 # JBoss VFS 2 support for Spring Framework 4.0 #
 
 Spring Framework 4.0 removed support for JBoss AS 5's VFS variant. The Spring 4 VfsUtils class does not support any more the VFS 2 of JBoss AS 5 and JBoss 5.x EAP.
-This project provides the AnnotationConfigWebApplicationContext and JBoss5XmlWebApplicationContext subclasses which support the VFS 2 of JBoss 5.
-The JBoss5AnnotationConfigWebApplicationContext class worked with the Vfs2Utils class that is a simple copy/paste of the VfsUtils class of the Spring Framework 3.2.
+This project provides an AnnotationConfigWebApplicationContext subclass which support the VFS 2 of JBoss 5.
+The JBoss5AnnotationConfigWebApplicationContext and JBoss5XmlWebApplicationContext classes worked with the Vfs2Utils class that is a simple copy/paste of the VfsUtils class of the Spring Framework 3.2.
 
 ## Quick Start ##
 
