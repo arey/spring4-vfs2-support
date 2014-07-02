@@ -13,6 +13,10 @@
  */
 package com.javaetmoi.core.spring.vfs;
 
+import static org.springframework.util.ResourceUtils.URL_PROTOCOL_JAR;
+import static org.springframework.util.ResourceUtils.URL_PROTOCOL_WSJAR;
+import static org.springframework.util.ResourceUtils.URL_PROTOCOL_ZIP;
+
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -160,6 +164,19 @@ public class Vfs2PathMatchingResourcePatternResolver extends PathMatchingResourc
                 return sb.toString();
             }
         }
+    }
+
+    /**
+     * The fix https://jira.spring.io/browse/SPR-11676 for the 4.0.4 Spring release breaks VFS
+     * support. By waiting the 4.0.6 release and its patch https://jira.spring.io/browse/SPR-11887,
+     * we override this method in ordrer to remove the the URL_PROTOCOL_VFSZIP check. 
+     * 
+     */
+    @Override
+    protected boolean isJarResource(Resource resource) throws IOException {
+        String protocol = resource.getURL().getProtocol();
+        return (URL_PROTOCOL_JAR.equals(protocol) || URL_PROTOCOL_ZIP.equals(protocol) || URL_PROTOCOL_WSJAR.equals(protocol));
+
     }
 
 }
