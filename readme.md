@@ -12,7 +12,7 @@ The JBoss5AnnotationConfigWebApplicationContext and JBoss5XmlWebApplicationConte
 <dependency>
   <groupId>com.javaetmoi.core</groupId>
   <artifactId>javaetmoi-spring4-vfs2-support</artifactId>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
 </dependency> 
        
 <repository>
@@ -71,8 +71,36 @@ Or with the Spring DispatcherServlet:
 </listener>
 ```
  
+4. Spring JPA support
+
+This module provides the Vfs2PersistenceUnitManager class that extends the Vfs2PersistenceUnitManager from Spring ORM
+in order to use the Vfs2PathMatchingResourcePatternResolver.
+How to use it: 
+ 
+```
+@Bean
+public EntityManagerFactory entityManagerFactory() {
+    LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+    em.setDataSource(dataSource);
+    em.setPersistenceUnitName("myPersitenceUnit");
+    em.setPersistenceUnitManager(persistenceUnitManager());
+    // ...
+    em.afterPropertiesSet();
+    return em.getObject();
+}
+
+@Bean
+public GaelPersistenceUnitManager persistenceUnitManager() {
+    GaelPersistenceUnitManager pum = new GaelPersistenceUnitManager(applicationContext);
+    pum.setDefaultDataSource(dataSource);
+    pum.setDefaultPersistenceUnitName("myPersitenceUnit");
+    pum.setPackagesToScan("com.javaetmoi.demo.domain.model");
+    return pum;
+} 
+ ```
 
 ## References ##
+* [French article explaining how is working this JBoss VFS 2 extension](http://javaetmoi.com/2014/04/support-vfs2-jboss5-spring4/)
 * [GitHub commit by Juergen Hoeller](https://github.com/spring-projects/spring-framework/commit/ca194261a42a0a4f0c8bdc36f447e1029a7d2e3e)
 * [Post on the Spring Forum](http://forum.spring.io/forum/spring-projects/container/744173-spring-4-doesn-t-support-vfs2)
 
@@ -84,7 +112,10 @@ Or with the Spring DispatcherServlet:
     <th>Version</th><th>Release date</th><th>Features</th>
   </tr>
   <tr>
-    <td>1.1.1-SNAPSHOT</td><td>next version</td><td></td>
+    <td>1.2.1-SNAPSHOT</td><td>next version</td><td></td>
+  </tr>  
+  <tr>
+    <td>1.2.0</td><td>02/07/2014</td><td>Fix added for Spring Framework 4.0.4 and 4.0.5. Add VFS2 support for JPA (Vfs2PersistenceUnitManager)</td>
   </tr>
   <tr>
     <td>1.1.0</td><td>31/03/2014</td><td>JBoss5XmlWebApplicationContext added</td>
