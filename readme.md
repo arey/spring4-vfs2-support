@@ -12,18 +12,11 @@ The JBoss5AnnotationConfigWebApplicationContext and JBoss5XmlWebApplicationConte
 <dependency>
   <groupId>com.javaetmoi.core</groupId>
   <artifactId>javaetmoi-spring4-vfs2-support</artifactId>
-  <version>1.2.0</version>
+  <version>1.3.0</version>
 </dependency> 
-       
-<repository>
-  <id>javaetmoi-maven-release</id>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <name>Java et Moi Maven RELEASE Repository</name>
-  <url>http://repository-javaetmoi.forge.cloudbees.com/release/</url>
-</repository>
 ```
+
+The Spring Batch Toolkit artefacts are available from [Maven Central](http://repo1.maven.org/maven2/com/javaetmoi/core/javaetmoi-spring4-vfs2-support/)
 
 2. For Spring Java Config, declare the JBoss5AnnotationConfigWebApplicationContext into the web.xml
 
@@ -99,6 +92,29 @@ public GaelPersistenceUnitManager persistenceUnitManager() {
 } 
  ```
 
+4. Spring MVC webjar support
+
+With Spring MVC, static resources could be served from a webjar.
+The Vfs2ResourceHandlerRegistry class prevents you for having the error java.lang.ClassNotFoundException: org.jboss.vfs.VFS from BaseClassLoader. 
+
+How to use it:
+```
+@Configuration
+@EnableWebMvc
+public class WebConfig extends WebMvcConfigurerAdapter {
+
+    @Autowired
+    private ApplicationContext applicationContext;
+    
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        new Vfs2ResourceHandlerRegistry(registry, applicationContext)
+                .addResourceHandler("/resources/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+    }
+}
+```
+
 ## References ##
 * [French article explaining how is working this JBoss VFS 2 extension](http://javaetmoi.com/2014/04/support-vfs2-jboss5-spring4/)
 * [GitHub commit by Juergen Hoeller](https://github.com/spring-projects/spring-framework/commit/ca194261a42a0a4f0c8bdc36f447e1029a7d2e3e)
@@ -112,7 +128,10 @@ public GaelPersistenceUnitManager persistenceUnitManager() {
     <th>Version</th><th>Release date</th><th>Features</th>
   </tr>
   <tr>
-    <td>1.2.1-SNAPSHOT</td><td>next version</td><td></td>
+    <td>1.3.1-SNAPSHOT</td><td>next version</td><td></td>
+  </tr>  
+  <tr>
+    <td>1.3.0</td>01/10/2014<td>Add VFS2 support for Spring MVC webjars.</td><td></td>
   </tr>  
   <tr>
     <td>1.2.0</td><td>02/07/2014</td><td>Fix added for Spring Framework 4.0.4 and 4.0.5. Add VFS2 support for JPA (Vfs2PersistenceUnitManager)</td>
