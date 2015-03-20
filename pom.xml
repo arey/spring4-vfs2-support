@@ -5,7 +5,7 @@
   <groupId>com.javaetmoi.core</groupId>
   <artifactId>javaetmoi-spring4-vfs2-support</artifactId>
   <name>JavaEtMoi Core :: ${project.artifactId} - ${project.packaging}</name>
-  <version>1.3.1-SNAPSHOT</version>
+  <version>1.4.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <description>JBoss VFS 2 support for Spring Framework 4.0</description>
   <inceptionYear>2014</inceptionYear>
@@ -44,6 +44,7 @@
     <!-- Version of third libraries -->
     <version.spring-framework>4.0.3.RELEASE</version.spring-framework>
     <version.servlet-api>2.5</version.servlet-api>
+    <version.hibernate>4.3.8.Final</version.hibernate>
 
     <!-- Version of maven plugins -->
     <version.plugin.maven-eclipse-plugin>2.9</version.plugin.maven-eclipse-plugin>
@@ -80,6 +81,12 @@
       <artifactId>spring-webmvc</artifactId>
       <version>${version.spring-framework}</version>
       <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <optional>true</optional>
+      <version>${version.hibernate}</version>
     </dependency>
     
 

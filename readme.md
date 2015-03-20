@@ -92,6 +92,24 @@ public Vfs2PersistenceUnitManager persistenceUnitManager() {
 } 
  ```
 
+With Hibernate implementation, you have to disable the DefaultScanner by using the DisableHibernateScanner.
+
+First, customize the ```hibernate.ejb.resource_scanner``` hibernate property:
+```
+<util:map id="hibernateAdditionalProperties">
+   <entry key="hibernate.ejb.resource_scanner"value="com.javaetmoi.core.spring.vfs.DisableHibernateScanner"/>
+ </util:map>
+```
+
+Then declare it into the ```entityManagerFactory```:
+```
+<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+    p:dataSource-ref="dataSource" p:jpaVendorAdapter-ref="jpaAdapter">
+   ...
+   <property name="jpaPropertyMap" ref="hibernateAdditionalProperties"/>
+ </bean>
+ ```
+
 4. Spring MVC webjar support
 
 With Spring MVC, static resources could be served from a webjar.
