@@ -12,7 +12,7 @@ The JBoss5AnnotationConfigWebApplicationContext and JBoss5XmlWebApplicationConte
 <dependency>
   <groupId>com.javaetmoi.core</groupId>
   <artifactId>javaetmoi-spring4-vfs2-support</artifactId>
-  <version>1.3.0</version>
+  <version>1.4.0</version>
 </dependency> 
 ```
 
@@ -146,8 +146,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     <th>Version</th><th>Release date</th><th>Features</th>
   </tr>
   <tr>
-    <td>1.3.1-SNAPSHOT</td><td>next version</td><td></td>
-  </tr>  
+    <td>1.4.1-SNAPSHOT</td><td>next version</td><td></td>
+  </tr>
+  <tr>
+    <td>1.3.0</td>20/03/2015<td>Add VFS2 support for Hibernate.</td><td></td>
+  </tr>
   <tr>
     <td>1.3.0</td>01/10/2014<td>Add VFS2 support for Spring MVC webjars.</td><td></td>
   </tr>  
