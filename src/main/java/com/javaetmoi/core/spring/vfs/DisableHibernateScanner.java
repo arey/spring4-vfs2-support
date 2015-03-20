@@ -32,7 +32,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
  * <p>
  * To use Hibernate 4 support of the Spring Framework with JBoss 5 EAP, you have to
  * use the method {@link LocalContainerEntityManagerFactoryBean#setPackagesToScan(String...)}.<br>
- * Hibernate does not have to scan archives in order to find JPA entities.<br/>
+ * Hibernate does not have to scan archives in order to find JPA entities.<br>
  * With StandardScanner implementation, the vfszip protocol triggers the stacktrace:
  *  <blockquote> Caused by:
  * java.lang.IllegalArgumentException: File [/C://servers/jboss-eap-5.1/jboss-as/server
@@ -40,8 +40,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
  * referenced by given URL [vfszip:/C://servers/jboss-eap-5.1/jboss-
  * as/server/default/deploy/myapp-ear-15.1.0.ear/vital-war-15.1.0.war/WEB-INF/classes/]
  * does not exist</blockquote>
- * </p>
- * 
+ *
  */
 public class DisableHibernateScanner extends AbstractScannerImpl {
 

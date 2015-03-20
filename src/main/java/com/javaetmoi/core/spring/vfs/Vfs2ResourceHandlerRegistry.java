@@ -27,10 +27,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * Enable Spring MVC webjar support for JBoss 5.1 EAP.
  * <p>
  * Wrap the Spring MVC {@link ResourceHandlerRegistry} class in order to register a
- * {@link Vfs2ResourceHttpRequestHandler}.<br/>
+ * {@link Vfs2ResourceHttpRequestHandler}.<br>
  * Without this hack, you will have this kind of error: java.lang.ClassNotFoundException:
  * org.jboss.vfs.VFS from BaseClassLoader.
- * <p>
  * <p>
  * This class shoud be used from the
  * {@link WebMvcConfigurer#addResourceHandlers(ResourceHandlerRegistry)} method:<br>
@@ -41,9 +40,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * <br>
  * The <i>applicationContext parameter</i> could be inject into the {@link Configuration} class:<br> 
  * <code>
- * @Autowired private ApplicationContext applicationContext;
+ * &#64;Autowired private ApplicationContext applicationContext;
  * </code>
- * </p>
  */
 public class Vfs2ResourceHandlerRegistry {
 

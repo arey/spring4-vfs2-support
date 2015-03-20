@@ -14,8 +14,8 @@ import com.javaetmoi.core.spring.vfs.Vfs2PathMatchingResourcePatternResolver;
  * does not support any more the VFS 2 of JBoss AS 5 or JBoss 5.x EAP.
  * </p>
  * 
- * @see https://github.com/spring-projects/spring-framework/commit/ca194261a42a0a4f0c8bdc36f447e1029a7d2e3e
- * @see http://forum.spring.io/forum/spring-projects/container/744173-spring-4-doesn-t-support-vfs2
+ * @see <a href="https://github.com/spring-projects/spring-framework/commit/ca194261a42a0a4f0c8bdc36f447e1029a7d2e3e">https://github.com/spring-projects/spring-framework/commit/ca194261a42a0a4f0c8bdc36f447e1029a7d2e3e</a>
+ * @see <a href="http://forum.spring.io/forum/spring-projects/container/744173-spring-4-doesn-t-support-vfs2">http://forum.spring.io/forum/spring-projects/container/744173-spring-4-doesn-t-support-vfs2</a>
  */
 public class JBoss5AnnotationConfigWebApplicationContext extends AnnotationConfigWebApplicationContext {
 
