@@ -83,8 +83,8 @@ public EntityManagerFactory entityManagerFactory() {
 }
 
 @Bean
-public GaelPersistenceUnitManager persistenceUnitManager() {
-    GaelPersistenceUnitManager pum = new GaelPersistenceUnitManager(applicationContext);
+public Vfs2PersistenceUnitManager persistenceUnitManager() {
+    Vfs2PersistenceUnitManager pum = new Vfs2PersistenceUnitManager(applicationContext);
     pum.setDefaultDataSource(dataSource);
     pum.setDefaultPersistenceUnitName("myPersitenceUnit");
     pum.setPackagesToScan("com.javaetmoi.demo.domain.model");
