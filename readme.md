@@ -149,10 +149,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     <td>1.4.1-SNAPSHOT</td><td>next version</td><td></td>
   </tr>
   <tr>
-    <td>1.3.0</td>20/03/2015<td>Add VFS2 support for Hibernate.</td><td></td>
+    <td>1.4.0</td><td>20/03/2015</td><td>Add VFS2 support for Hibernate.</td>
   </tr>
   <tr>
-    <td>1.3.0</td>01/10/2014<td>Add VFS2 support for Spring MVC webjars.</td><td></td>
+    <td>1.3.0</td><td>01/10/2014</td><td>Add VFS2 support for Spring MVC webjars.</td>
   </tr>  
   <tr>
     <td>1.2.0</td><td>02/07/2014</td><td>Fix added for Spring Framework 4.0.4 and 4.0.5. Add VFS2 support for JPA (Vfs2PersistenceUnitManager)</td>
