@@ -146,7 +146,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     <th>Version</th><th>Release date</th><th>Features</th>
   </tr>
   <tr>
-    <td>1.4.1-SNAPSHOT</td><td>next version</td><td></td>
+    <td>1.4.1-SNAPSHOT</td><td>next version</td><td>JBoss5GenericXmlApplicationContext added</td>
   </tr>
   <tr>
     <td>1.4.0</td><td>20/03/2015</td><td>Add VFS2 support for Hibernate.</td>
