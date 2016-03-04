@@ -56,7 +56,7 @@
     <version.plugin.maven-deploy-plugin>2.8.1</version.plugin.maven-deploy-plugin>
     <version.plugin.maven-release-plugin>2.5</version.plugin.maven-release-plugin>
     <version.plugin.nexus-staging-maven-plugin>1.6.2</version.plugin.nexus-staging-maven-plugin>
-    <version.plugin.maven-gpg-plugin>1.5</version.plugin.maven-gpg-plugin>
+    <version.plugin.maven-gpg-plugin>1.6</version.plugin.maven-gpg-plugin>
 
     <!-- Source encoding -->
     <source.encoding>UTF-8</source.encoding>
