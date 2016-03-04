@@ -25,7 +25,6 @@ public class JBoss5GenericXmlApplicationContext extends GenericXmlApplicationCon
 
     /**
      * {@link XmlWebApplicationContext} subclass which support the VFS 2 and JBoss 5.
-     * <p/>
      * <p>
      * Spring Framework 4.0 removed support for JBoss AS 5's VFS variant. The {@link VfsUtils} class
      * does not support any more the VFS 2 of JBoss AS 5 or JBoss 5.x EAP.
