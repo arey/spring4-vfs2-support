@@ -12,11 +12,13 @@ The JBoss5AnnotationConfigWebApplicationContext and JBoss5XmlWebApplicationConte
 <dependency>
   <groupId>com.javaetmoi.core</groupId>
   <artifactId>javaetmoi-spring4-vfs2-support</artifactId>
-  <version>1.4.0</version>
+  <version>1.4.1</version>
 </dependency> 
 ```
 
 The Spring Batch Toolkit artefacts are available from [Maven Central](http://repo1.maven.org/maven2/com/javaetmoi/core/javaetmoi-spring4-vfs2-support/)
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.javaetmoi.core/javaetmoi-spring4-vfs2-support/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.javaetmoi.core/javaetmoi-spring4-vfs2-support)
 
 2. For Spring Java Config, declare the JBoss5AnnotationConfigWebApplicationContext into the web.xml
 
@@ -146,7 +148,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     <th>Version</th><th>Release date</th><th>Features</th>
   </tr>
   <tr>
-    <td>1.4.1-SNAPSHOT</td><td>next version</td><td>JBoss5GenericXmlApplicationContext added</td>
+    <td>1.4.2-SNAPSHOT</td><td>next version</td><td></td>
+  </tr>
+  <tr>
+    <td>1.4.1</td><td>05/03/2016</td><td>JBoss5GenericXmlApplicationContext added</td>
   </tr>
   <tr>
     <td>1.4.0</td><td>20/03/2015</td><td>Add VFS2 support for Hibernate.</td>
